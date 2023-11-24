@@ -39,6 +39,12 @@ end
 
 Tab1:CreateToggle("Enable HIGHLIGHT", function(value)
 enabled = value
+if value == false then
+for _,v in pairs(game.Players:GetChildren()) do
+    if v:IsA("Highlight") and v.Character:FindFirstChild("X-RAY") then
+        v.Character["X-RAY"]:Destroy()
+    end
+end
 end)
 
 --[[
@@ -77,7 +83,7 @@ while enabled do
         local chr = v.Character
         if chr ~= nil then
         local esp = Instance.new("Highlight")
-        esp.Name = v.Name
+        esp.Name = "X-RAY"
         if uselocalplayer == false and esp.Name == game.Players.LocalPlayer.Name then
             else
         esp.Parent = v.Character
