@@ -13,7 +13,7 @@ local fillcolor = Color3.new(0,1,0)
 local outlinecolor = Color3.new(1,1,1)
 local filltrans = 0
 local outlinetrans = 0
-
+--local uselocalplayer = true
 
 --[[local holder = game.CoreGui:FindFirstChild("ESPHolder") or Instance.new("Folder")
 if enabled == false then
@@ -44,6 +44,7 @@ for _,v in pairs(game.Players:GetChildren()) do
     if v:IsA("Highlight") and v.Character:FindFirstChild("X-RAY") then
         v.Character["X-RAY"]:Destroy()
     end
+end
 end
 end)
 
